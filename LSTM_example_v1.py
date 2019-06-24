@@ -131,3 +131,7 @@ plt.plot(y_pre,y_test,"k.")
 
 mse = ((y_pre.ravel()-y_test)**2).mean(axis=0)/np.nanmedian(y_test)
 print("Mean square error =%.6f"%mse)
+
+
+## recover y_pre:
+y_pre = y_pre*(np.nanmax(X,axis=0)-np.nanmin(X,axis=0))+np.nanmin(X,axis=0)
